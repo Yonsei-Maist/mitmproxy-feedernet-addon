@@ -20,7 +20,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 # start mitm proxy
-## start mitm first for create certificate files
+## start mitm first to create certificate files
 RUN nohup mitmweb 2>&1 & echo $! > process
 RUN kill `cat process`
 
@@ -35,5 +35,5 @@ RUN dpkg-reconfigure ca-certficates
 RUN update-ca-certificates
 
 # start server
-WORKDIR /usr/src/app
-RUN mitmweb -s MitmproxyFeedernetAddon.py > ./log
+ENTRYPOINT ["mitmweb"]
+CMD ["-s MitmproxyFeedernetAddon.py"]

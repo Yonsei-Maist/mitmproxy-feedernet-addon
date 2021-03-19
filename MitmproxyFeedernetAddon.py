@@ -6,17 +6,24 @@ get https request content from feedernet using mitmproxy
 @Date 2021.03.18
 """
 from mitmproxy import ctx
+from lib.database import DataManager
+from config import Config
 
 
-class Counter:
+class PacketManager:
     def __init__(self):
-        self.num = 0
+        self.database = DataManager(
+            Config.DATABASE_HOST,
+            Config.DATABASE,
+            Config.DATABASE_USER,
+            Config.DATABASE_PASSWORD
+        )
 
     def request(self, flow):
-        self.num = self.num + 1
-        ctx.log.info("We've seen %d flows" % self.num)
+        ctx.log.info(flow)
+        self.database.insert_data('', '', '', '', '')
 
 
 addons = [
-    Counter()
+    PacketManager()
 ]
