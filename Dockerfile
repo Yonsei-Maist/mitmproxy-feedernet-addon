@@ -8,10 +8,6 @@ RUN apt-get update
 #install python 3
 RUN apt install -y python3
 RUN apt install -y python3-pip
-RUN apt-get install -y libgl1-mesa-glx
-RUN DEBIAN_FRONTEND="noninteractive" TZ="Asia/Seoul" apt-get -y install tzdata
-RUN apt-get install -y libgtk2.0-dev
-RUN apt-get install -y git
 
 # install library
 RUN pip3 install mitmproxy
@@ -24,7 +20,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 # start mitm proxy
-## start mitm first for create ssh
+## start mitm first for create certificate files
 RUN nohup mitmweb 2>&1 & echo $! > process
 RUN kill `cat process`
 
