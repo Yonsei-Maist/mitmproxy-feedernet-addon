@@ -7,8 +7,8 @@ Save packet to mysql server (maist.yonsei.ac.kr:3306)
 ## Environment
 pip install list
 ```
-mitmproxy@lastest
 python@3.0.0 or more
+mitmproxy@lastest
 pymysql@lastest
 ```
 ## Install
