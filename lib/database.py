@@ -35,6 +35,20 @@ class Connection:
 
         return {'rows': ok}
 
+    def __enter__(self):
+        return self.get_connection()
+
+    def __exit__(self, type, value, traceback):
+
+        if type is None:
+            self._conn.commit()
+        else:
+            self._conn.rollback()
+            print('failure to save', value)
+
+        self._conn.close()
+        self._conn = None
+
 
 class DataManager(Connection):
     def insert_data(self, request_method, request_url, request_contents, response_url, response_contents):

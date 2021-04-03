@@ -36,4 +36,4 @@ RUN update-ca-certificates
 
 # start server
 ENTRYPOINT ["mitmweb"]
-CMD ["-s MitmproxyFeedernetAddon.py"]
+CMD ["-m reverse:https://localhost:443 -p 9443 --web-port 9999 -s MitmproxyFeedernetAddon.py"]

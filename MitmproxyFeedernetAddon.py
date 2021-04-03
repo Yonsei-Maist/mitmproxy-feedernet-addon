@@ -19,9 +19,13 @@ class PacketManager:
             Config.DATABASE_PASSWORD
         )
 
-    def request(self, flow):
-        ctx.log.info(flow)
-        self.database.insert_data('', '', '', '', '')
+    def response(self, flow):
+        self.database.insert_data(
+            flow.request.method,
+            "{0}".format(flow.client_conn.address[0]),
+            flow.request.content.decode("utf-8"),
+            "{0}:{1}".format(flow.server_conn.address[0], flow.server_conn.address[1]),
+            flow.response.content.decode("utf-8"))
 
 
 addons = [
