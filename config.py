@@ -6,7 +6,7 @@ Configuration for project (it is private project)
 
 
 class Config:
-    DATABASE_HOST = '165.132.221.47'
+    DATABASE_HOST = 'maist.yonsei.ac.kr'
     DATABASE = 'cdm'
     DATABASE_USER = 'cdm'
     DATABASE_PASSWORD = 'cdm2021maist'
