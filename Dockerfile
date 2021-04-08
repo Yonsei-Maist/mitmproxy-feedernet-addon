@@ -21,7 +21,7 @@ WORKDIR /usr/src/app
 
 # start mitm proxy
 ## start mitm first to create certificate files
-RUN bash -C "./set-mitmweb-sh"
+RUN bash -C "./set-mitmweb.sh"
 
 # start server
 ENTRYPOINT ["mitmweb"]

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 nohup mitmweb 2>&1 & echo $! > process
+sleep 10
 FILE=./process
 if [ -f "$FILE" ]
 then
@@ -13,6 +14,6 @@ then
   openssl x509 -in ./mitmproxy-ca-cert.pem -inform PEM -out ./mitmproxy-ca-cert.crt
 
   ## register crt file in Ubuntu
-  dpkg-reconfigure ca-certficates
+  dpkg-reconfigure ca-certificates
   update-ca-certificates
 fi
