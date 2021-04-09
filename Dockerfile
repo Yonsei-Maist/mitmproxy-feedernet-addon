@@ -25,4 +25,4 @@ RUN bash -C "./set-mitmweb.sh"
 
 # start server
 ENTRYPOINT ["mitmweb"]
-CMD ["-m reverse:https://localhost:443 -p 9443 --web-port 8443 -s MitmproxyFeedernetAddon.py"]
+CMD ["-m reverse:https://maist.yonsei.ac.kr:8443 -p 9443 --web-port 9999 -s MitmproxyFeedernetAddon.py"]

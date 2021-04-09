@@ -14,6 +14,5 @@ then
   openssl x509 -in ./mitmproxy-ca-cert.pem -inform PEM -out ./mitmproxy-ca-cert.crt
 
   ## register crt file in Ubuntu
-  dpkg-reconfigure ca-certificates
   update-ca-certificates
 fi
