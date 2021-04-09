@@ -24,5 +24,4 @@ WORKDIR /usr/src/app
 RUN bash -C "./set-mitmweb.sh"
 
 # start server
-ENTRYPOINT ["mitmweb"]
-CMD ["-m reverse:https://maist.yonsei.ac.kr:8443 -p 9443 --web-port 9999 -s MitmproxyFeedernetAddon.py"]
+ENTRYPOINT ["mitmweb -m reverse:https://maist.yonsei.ac.kr:8443 -p 9443 --web-port 9999 -s MitmproxyFeedernetAddon.py"]
