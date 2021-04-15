@@ -24,4 +24,4 @@ WORKDIR /usr/src/app
 RUN bash -C "./set-mitmweb.sh"
 
 # start server
-ENTRYPOINT mitmweb -m reverse:https://maist.yonsei.ac.kr:8443 -p 8843 --web-port 9999 --web-host 0.0.0.0 -s ./MitmproxyFeedernetAddon.py --no-web-open-browser --set block_global=false
+ENTRYPOINT mitmweb -m reverse:http://maist.yonsei.ac.kr:8843 -p 8844 --web-port 9999 --web-host 0.0.0.0 -s ./MitmproxyFeedernetAddon.py --no-web-open-browser --set block_global=false
