@@ -56,7 +56,7 @@ class DataManager(Connection):
               "INSERT INTO tbl_packet " \
               " (" \
               "     var_method" \
-              "     , var_request_url" \
+              "     , var_request_ip" \
               "     , var_request_contents" \
               "     , var_response_url" \
               "     , var_response_contents" \
