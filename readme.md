@@ -31,6 +31,7 @@ mitmproxy [options..] -s /path/to/project/MitmproxyFeedernetAddon.py
 ```
 
 ## Author
-Chanwoo Gwon, Yonsei Univ. Researcher since 2020.05
+Chanwoo Gwon, Yonsei Univ. Researcher, since 2020.05
+Sangwon Hwong, Yonse Univ. Research Professor, since 2018.09 ~
 ## Maintainer
 Chanwoo Gwon, arknell@yonsei.ac.kr (2021.03 ~)
